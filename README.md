@@ -58,9 +58,10 @@ Model: Riwayat.php
 ## Relasi Antar Entitas
 
 1. Gejala (Gejala.php):
+   BelongsToMany dengan Kerusakan: Satu gejala bisa menjadi indikasi dari banyak kerusakan, dan sebaliknya.
 ```bash
 
-BelongsToMany dengan Kerusakan: Satu gejala bisa menjadi indikasi dari banyak kerusakan, dan sebaliknya.
+
 
 public function kerusakan()
 {
@@ -69,7 +70,29 @@ public function kerusakan()
 
 ```
 
-## About Laravel
+2. Kerusakan (Kerusakan.php):
+
+* BelongsToMany dengan Gejala: Satu kerusakan bisa disebabkan oleh banyak gejala, dan sebaliknya.
+
+```bash
+public function gejala()
+{
+    return $this->belongsToMany('App\Gejala', 'gejala_kerusakan', 'id_kerusakan', 'id_gejala');
+}
+
+```
+
+* HasMany dengan BiayaPerbaikan: Satu kerusakan dapat memiliki banyak biaya perbaikan.
+  
+```bash
+public function biayaPerbaikan()
+{
+    return $this->hasMany('App\BiayaPerbaikan', 'id_kerusakan', 'id');
+}
+
+```
+
+* 
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
