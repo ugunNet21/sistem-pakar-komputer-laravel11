@@ -12,6 +12,10 @@
 <a href="https://sqlitebrowser.org/dl/" target="_blank" />
 
 
+## Screenshoot
+![image](https://github.com/ugunNet21/sistem-pakar-komputer-laravel11/assets/45864165/da84eed0-dccd-4123-9f72-e9cd809bab45)
+
+
 ## Urutan Membuat Migration
 
 ```bash
