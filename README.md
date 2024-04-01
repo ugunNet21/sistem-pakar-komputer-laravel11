@@ -8,7 +8,8 @@
 </p>
 
 ## Download SQLITE GUI
-<a href="https://sqlitebrowser.org/dl/" />
+
+<a href="https://sqlitebrowser.org/dl/" target="_blank" />
 
 
 ## Urutan Membuat Migration
