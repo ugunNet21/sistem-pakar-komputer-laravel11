@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Download SQLITE GUI
+<a href="https://sqlitebrowser.org/dl/" />
+
+
 ## Urutan Membuat Migration
 
 ```bash
