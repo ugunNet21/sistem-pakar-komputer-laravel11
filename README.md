@@ -92,8 +92,77 @@ public function biayaPerbaikan()
 
 ```
 
-* 
+* HasMany dengan Solusi: Satu kerusakan dapat memiliki banyak solusi.
+```bash
+public function solusi()
+{
+    return $this->hasMany('App\Solusi', 'id_kerusakan', 'id');
+}
 
+```
+
+3. BiayaPerbaikan (BiayaPerbaikan.php):
+* BelongsTo dengan Kerusakan: Satu biaya perbaikan terkait dengan satu kerusakan.
+  
+```bash
+public function kerusakan()
+{
+    return $this->belongsTo('App\Kerusakan', 'id_kerusakan', 'id');
+}
+
+```
+4. Solusi (Solusi.php):
+* BelongsTo dengan Kerusakan: Satu solusi terkait dengan satu kerusakan.
+  
+```bash
+public function kerusakan()
+{
+    return $this->belongsTo('App\Kerusakan', 'id_kerusakan', 'id');
+}
+
+```
+
+5. Hasil (Hasil.php):
+   
+* BelongsTo dengan Gejala: Satu hasil diagnosis terkait dengan satu gejala.
+  
+```bash
+public function gejala()
+{
+    return $this->belongsTo('App\Gejala', 'id_gejala', 'id');
+}
+
+```
+* BelongsTo dengan Kerusakan: Satu hasil diagnosis terkait dengan satu kerusakan.
+  
+```bash
+public function kerusakan()
+{
+    return $this->belongsTo('App\Kerusakan', 'id_kerusakan', 'id');
+}
+
+```
+
+* HasOne dengan Riwayat: Satu hasil diagnosis dapat memiliki satu riwayat tindakan.
+  
+```bash
+public function riwayat()
+{
+    return $this->hasOne('App\Riwayat', 'id_hasil', 'id');
+}
+
+```
+6. Riwayat (Riwayat.php):
+   
+* BelongsTo dengan Hasil: Satu riwayat tindakan terkait dengan satu hasil diagnosis.
+  
+```bash
+public function hasil()
+{
+    return $this->belongsTo('App\Hasil', 'id_hasil', 'id');
+}
+
+```
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
