@@ -57,8 +57,8 @@
                             <span>Input Data</span>
                         </a>
                         <ul class="submenu ">
-                            <li class="submenu-item {{ request()->routeIs('jenjang.index') ? 'active' : '' }} ">
-                                <a href="#" class="submenu-link">Jenjang</a>
+                            <li class="submenu-item {{ request()->routeIs('gejala.index') ? 'active' : '' }} ">
+                                <a href="{{route('gejala.index')}}" class="submenu-link">Gejala</a>
                             </li>
                             {{-- <li class="submenu-item {{ request()->routeIs('jurusan.index') ? 'active' : '' }} ">
                                 <a href="{{route('jurusan.index')}}" class="submenu-link">Jurusan</a>

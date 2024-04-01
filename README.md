@@ -60,6 +60,17 @@ Riwayat
 Model: Riwayat.php
 ```
 
+## Urutan membuat Controller
+
+```bash
+GejalaController
+KerusakanController
+BiayaPerbaikanController
+SolusiController
+HasilController
+RiwayatController
+```
+
 ## Relasi Antar Entitas
 
 1. Gejala (Gejala.php):
