@@ -7,6 +7,68 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Urutan Membuat Migration
+
+```bash
+Urutan Pembuatan Migration:
+Gejala
+
+Migrasi: create_gejalas_table
+Kerusakan
+
+Migrasi: create_kerusakans_table
+BiayaPerbaikan
+
+Migrasi: create_biaya_perbaikans_table
+Solusi
+
+Migrasi: create_solusis_table
+Hasil
+
+Migrasi: create_hasils_table
+Riwayat
+
+Migrasi: create_riwayats_table
+
+```
+
+## Urutan Membuat Model
+
+```bash
+Gejala
+
+Model: Gejala.php
+Kerusakan
+
+Model: Kerusakan.php
+BiayaPerbaikan
+
+Model: BiayaPerbaikan.php
+Solusi
+
+Model: Solusi.php
+Hasil
+
+Model: Hasil.php
+Riwayat
+
+Model: Riwayat.php
+```
+
+## Relasi Antar Entitas
+
+1. Gejala (Gejala.php):
+```bash
+
+BelongsToMany dengan Kerusakan: Satu gejala bisa menjadi indikasi dari banyak kerusakan, dan sebaliknya.
+
+public function kerusakan()
+{
+    return $this->belongsToMany('App\Kerusakan', 'gejala_kerusakan', 'id_gejala', 'id_kerusakan');
+}
+
+```
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
